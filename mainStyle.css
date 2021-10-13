@@ -1,0 +1,25 @@
+body{
+    color:whitesmoke;
+    background-color: darkslategray
+    
+}
+
+a{
+    color: darkslateblue;
+    background-color: slategray;
+    margin: 4px;
+    
+
+    
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    
+
+   
+}
+
+a:visited{
+    color:orange;
+}

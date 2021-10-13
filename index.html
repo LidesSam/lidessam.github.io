@@ -1,42 +1,66 @@
 <!Doctype html>
+<html>
+
 <head>
-<title>
-    Santiago Ariel Arrieta
-</title>
+    <title>
+        Santiago Ariel Arrieta
+    </title>
+
+    <script type="text/javascript" src="./src/ShowDisplay.js"></script>
+
+    <link rel="stylesheet" href="./mainStyle.css">
 </head>
+
 <body>
-    <h1> Santiago Ariel Arrieta </h1>
+
+    <h1> <a href="https://santiagoarrieta.000webhostapp.com/Main.html">Santiago Ariel Arrieta </a></h1>
     <!--change and load form json-->
-    <div>
-        PixelBox
-          <a href="https://github.com/LidesSam/PixelBox/"> github </a><hr>
-          <a href="https://lidessam.github.io/PixelBox/"> Deployed </a>
-          
-    <div><hr>
-        <br>
+    <div id="divbox">
 
-    <h2>Phaser 3</h2><hr>
+    </div>
     <br>
-    <div>
-        Soda Rocket
-            <a href="https://github.com/LidesSam/RocketSoda/"> github </a><hr>
-            <a href="https://lidessam.github.io/RocketSoda/"> Deployed </a><hr>
-            
-    <div>
-    
-        <br>
 
-    <div>
-        EatFruit
-            <a href="https://github.com/LidesSam/EatFruit"> github </a><hr>
-            <a href="https://lidessam.github.io/EatFruit/"> Deployed </a>
-            
-    <div>
-        <br>
-
-        <hr>
-        <br>
-        contacto: lides.sam@gamial.com
+    <hr>
+    <br>
+    contacto: lides.sam@gamial.com
 
 
 </body>
+<script>
+
+
+    var showbox = new ShowcaseDisplay("divbox")
+    showbox.createShowBox("PixelBox",
+        "https://github.com/LidesSam/PixelBox/", "https://lidessam.github.io/PixelBox/"
+        , "Aplicacion para realizar pixelarts"
+    )
+
+    showbox.createShowBox("Soda Rocket",
+        "https://github.com/LidesSam/RocketSoda/",
+        "https://lidessam.github.io/RocketSoda/",
+        "Demo test echo en Phaser 3",
+        "#a022af")
+
+    showbox.createShowBox("EatFruit",
+        "https://github.com/LidesSam/EatFruit/", "https://lidessam.github.io/EatFruit/",
+        "Juego Protoypo en Phaser 3",
+        "#5f5fbb")
+
+    showbox.createShowBox("TodoList",
+        "https://github.com/LidesSam/React-TDLIst", "https://react-todo-list-ldssaa.herokuapp.com/",
+        "ToDo List(Lista de cosas por hacer) demo en React JS/heroku",
+        "#0055ff")
+
+    showbox.createShowBox("Astro(Gearless v0.1)",
+     "https://github.com/LidesSam/Astro-AI/", "https://astro-ai.herokuapp.com/",
+     "Demo React JS: ",
+      "#0055ff")
+
+    showbox.createShowBox("stickboard(incomplete/in development)",
+     "https://github.com/LidesSam/Stick-BoarD", "http://stick-boar-d.herokuapp.com/",
+     "Proyecto en curso Kaban board echo en react",
+     "#905599")
+
+</script>
+
+</html>
