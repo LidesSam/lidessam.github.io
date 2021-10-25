@@ -27,39 +27,11 @@
 
 </body>
 <script>
-
-
+   
     var showbox = new ShowcaseDisplay("divbox")
-    showbox.createShowBox("PixelBox",
-        "https://github.com/LidesSam/PixelBox/", "https://lidessam.github.io/PixelBox/"
-        , "Aplicacion para realizar pixelarts"
-    )
+    showbox.addFromJsonFile("assets/data/mainList.json")
 
-    showbox.createShowBox("Soda Rocket",
-        "https://github.com/LidesSam/RocketSoda/",
-        "https://lidessam.github.io/RocketSoda/",
-        "Demo test echo en Phaser 3",
-        "#a022af")
-
-    showbox.createShowBox("EatFruit",
-        "https://github.com/LidesSam/EatFruit/", "https://lidessam.github.io/EatFruit/",
-        "Juego Protoypo en Phaser 3",
-        "#5f5fbb")
-
-    showbox.createShowBox("TodoList",
-        "https://github.com/LidesSam/React-TDLIst", "https://react-todo-list-ldssaa.herokuapp.com/",
-        "ToDo List(Lista de cosas por hacer) demo en React JS/heroku",
-        "#0055ff")
-
-    showbox.createShowBox("Astro(Gearless v0.1)",
-     "https://github.com/LidesSam/Astro-AI/", "https://astro-ai.herokuapp.com/",
-     "Demo React JS: ",
-      "#0055ff")
-
-    showbox.createShowBox("stickboard(incomplete/in development)",
-     "https://github.com/LidesSam/Stick-BoarD", "http://stick-boar-d.herokuapp.com/",
-     "Proyecto en curso Kaban board echo en react",
-     "#905599")
+   
 
 </script>
 
