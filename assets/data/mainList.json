@@ -87,5 +87,17 @@
             "phaser",
             "game"
         ]
+    },
+    {
+        "type":"showbox",
+        "title": "ping pong",
+        "gitLink":  "https://github.com/LidesSam/Pong", 
+        "deployLink": "https://lidessam.github.io/Pong/",
+        "backcolor": "#222222",
+        "descrip": "clasic pong game",
+        "tags": [
+            "phaser",
+            "game"
+        ]
     }
 ] 
