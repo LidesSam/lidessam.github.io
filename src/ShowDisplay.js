@@ -24,16 +24,18 @@ class ShowcaseDisplay {
         fetch(path)
             .then(response => response.json())
             .then(data => {
-                for (var i=0;i<=data.length-1;i++){
-                    let box= data[i]
+                for (var i = 0; i <= data.length - 1; i++) {
+                    let box = data[i]
                     console.log(i)
                     console.log(data[i])
                     console.log(box)
                     console.log(box.backcolor)
-                    switch(box.type){
-                        case"showbox":
-                            this.createShowBox(box.title,box.gitLink,box.deployLink,box.descrip,box.backcolor)
+                    switch (box.type) {
+                        case "showbox":
+                            this.createShowBox(box.title, box.gitLink, box.deployLink, box.descrip, box.backcolor)
                             break;
+                        case "section":
+                            this.createSection(box)
                         default:
                             let sep1 = document.createElement("br")
                             let sep2 = document.createElement("hr")
@@ -42,7 +44,7 @@ class ShowcaseDisplay {
                             break;
                     }
                     //console.log(box.title)
-                
+
                 }
             })
     }
@@ -59,7 +61,7 @@ class ShowcaseDisplay {
         showbox.style.minWidth = "128px"
         showbox.style.border = "black 2px solid"
         showbox.style.boxSizing = "border-box"
-        showbox.style.minHeight="fit-content"
+        showbox.style.minHeight = "fit-content"
 
 
 
@@ -67,7 +69,7 @@ class ShowcaseDisplay {
         let gitLink = document.createElement("a")
         let playLink = document.createElement("a")
         let linkbar = document.createElement("div")
-        linkbar.setAttribute("class","hbox")
+        linkbar.setAttribute("class", "hbox")
         linkbar.appendChild(gitLink)
         linkbar.appendChild(playLink)
 
@@ -104,6 +106,69 @@ class ShowcaseDisplay {
         this.parent.appendChild(showbox)
     }
 
+    createSection(data){
+        var section = document.createElement("div")
+        section.setAttribute("class", "box-section")
+    }
+
+    createShowBoxOn(container = null, title = "", gitHubUrl = null, playUrl = null, _description = "", backcolor = "#ff9822") {
+        if (container != null) {
+            console.log("addd sghow box")
+            let showbox = document.createElement("div")
+            let sb_title = document.createElement("h2")
+            sb_title.textContent = title
+            console.log(backcolor)
+            //style of the showbox
+            showbox.style.background = backcolor
+            showbox.style.minHeight = "64px"
+            showbox.style.minWidth = "128px"
+            showbox.style.border = "black 2px solid"
+            showbox.style.boxSizing = "border-box"
+            showbox.style.minHeight = "fit-content"
+
+
+
+            //links
+            let gitLink = document.createElement("a")
+            let playLink = document.createElement("a")
+            let linkbar = document.createElement("div")
+            linkbar.setAttribute("class", "hbox")
+            linkbar.appendChild(gitLink)
+            linkbar.appendChild(playLink)
+
+
+            gitLink.textContent = "Source Code/Git"
+            playLink.textContent = "Play"
+
+            gitLink.target = "_blank"
+            playLink.target = "_blank"
+
+            if (gitHubUrl != null) {
+                gitLink.href = gitHubUrl
+            }
+            if (playUrl != null) {
+                playLink.href = playUrl
+
+            }
+
+            showbox.appendChild(sb_title)
+
+            //descriptiosn
+            if (_description != "") {
+                var descripBox = document.createElement("div")
+                descripBox.textContent = _description
+                showbox.appendChild(descripBox)
+            }//
+
+
+            linkbar.style.padding = "4px";
+            showbox.appendChild(linkbar)
+            container.appendChild(showbox)
+
+        }
+
+    }
+
 
     addShowBox(showbox) { }
 
@@ -137,6 +202,13 @@ class ShowBox {
     }
 
 
+
+}
+
+class Section {
+    constructor() {
+
+    }
 
 }
 

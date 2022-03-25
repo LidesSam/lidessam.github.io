@@ -35,8 +35,8 @@
     {
         "type":"showbox",
         "title": "Eat Fruit",
-        "gitLink": "https://github.com/LidesSam/RocketSoda/",
-        "deployLink": "https://lidessam.github.io/RocketSoda/",
+        "gitLink": "https://github.com/LidesSam/EatFruit/",
+        "deployLink": "https://lidessam.github.io/EatFruit/",
         "backcolor": "orangered",
         "descrip": "Phaser demo",
         "tags": [
@@ -53,7 +53,7 @@
     {
         "type":"showbox",
         "title": "ToDoList",
-        "gitLink": "https://github.com/LidesSam/RocketSoda/",
+        "gitLink": "https://github.com/LidesSam/React-TDLIst",
         "deployLink": "https://lidessam.github.io/RocketSoda/",
         "backcolor": "darkcyan",
         "descrip": "Phaser demo",
@@ -66,8 +66,8 @@
     {
         "type":"showbox",
         "title": "stickboard(incomplete/in development)",
-        "gitLink": "https://github.com/LidesSam/RocketSoda/",
-        "deployLink": "https://lidessam.github.io/RocketSoda/",
+        "gitLink":  "https://github.com/LidesSam/Stick-BoarD", 
+        "deployLink": "https://react-todo-list-ldssaa.herokuapp.com/",
         "backcolor": "slategrey",
         "descrip": " Proyecto en curso Kaban board echo en react",
         "tags": [
@@ -79,8 +79,8 @@
     {
         "type":"showbox",
         "title": "Astro(Gearless v0.1)",
-        "gitLink":  "https://github.com/LidesSam/Stick-BoarD", 
-        "deployLink": "http://stick-boar-d.herokuapp.com/",
+        "gitLink":  "hhttps://github.com/LidesSam/Astro-AI", 
+        "deployLink": "https://astro-ai.herokuapp.com/",
         "backcolor": "#905599",
         "descrip": "react demo",
         "tags": [
@@ -96,7 +96,7 @@
         "backcolor": "#222222",
         "descrip": "clasic pong game",
         "tags": [
-            "phaser",
+            "javascript",
             "game"
         ]
     }
