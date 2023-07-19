@@ -1,14 +1,13 @@
 [
     {
-        "type":"divider"
-        
+        "type": "divider"
     },
     {
-        "type":"showbox",
+        "type": "showbox",
         "title": "PixelBox",
         "gitLink": "https://github.com/LidesSam/PixelBox/",
         "deployLink": "https://lidessam.github.io/PixelBox/",
-        "color":"black",
+        "color": "black",
         "backcolor": "orange",
         "descrip": "Aplicacion para realizar pixelarts",
         "tags": [
@@ -17,11 +16,10 @@
         ]
     },
     {
-        "type":"divider"
-        
+        "type": "divider"
     },
     {
-        "type":"showbox",
+        "type": "showbox",
         "title": "Soda Rocket",
         "gitLink": "https://github.com/LidesSam/RocketSoda/",
         "deployLink": "https://lidessam.github.io/RocketSoda/",
@@ -33,7 +31,7 @@
         ]
     },
     {
-        "type":"showbox",
+        "type": "showbox",
         "title": "Eat Fruit",
         "gitLink": "https://github.com/LidesSam/EatFruit/",
         "deployLink": "https://lidessam.github.io/EatFruit/",
@@ -43,30 +41,26 @@
             "phaser",
             "game"
         ]
-    }
-    ,
-   
-    {
-        "type":"divider"
-        
     },
     {
-        "type":"showbox",
+        "type": "divider"
+    },
+    {
+        "type": "showbox",
         "title": "ToDoList",
         "gitLink": "https://github.com/LidesSam/React-TDLIst",
         "deployLink": "https://lidessam.github.io/RocketSoda/",
         "backcolor": "darkcyan",
         "descrip": "Phaser demo",
-
         "tags": [
             "phaser",
             "game"
         ]
     },
     {
-        "type":"showbox",
+        "type": "showbox",
         "title": "stickboard(incomplete/in development)",
-        "gitLink":  "https://github.com/LidesSam/Stick-BoarD", 
+        "gitLink": "https://github.com/LidesSam/Stick-BoarD",
         "deployLink": "https://react-todo-list-ldssaa.herokuapp.com/",
         "backcolor": "slategrey",
         "descrip": " Proyecto en curso Kaban board echo en react",
@@ -74,12 +68,11 @@
             "phaser",
             "game"
         ]
-    }
-    ,
+    },
     {
-        "type":"showbox",
+        "type": "showbox",
         "title": "Astro(Gearless v0.1)",
-        "gitLink":  "hhttps://github.com/LidesSam/Astro-AI", 
+        "gitLink": "hhttps://github.com/LidesSam/Astro-AI",
         "deployLink": "https://astro-ai.herokuapp.com/",
         "backcolor": "#905599",
         "descrip": "react demo",
@@ -89,9 +82,9 @@
         ]
     },
     {
-        "type":"showbox",
+        "type": "showbox",
         "title": "ping pong",
-        "gitLink":  "https://github.com/LidesSam/Pong", 
+        "gitLink": "https://github.com/LidesSam/Pong",
         "deployLink": "https://lidessam.github.io/Pong/",
         "backcolor": "#222222",
         "descrip": "clasic pong game",
@@ -99,5 +92,17 @@
             "javascript",
             "game"
         ]
+    },
+    {
+        "type": "showbox",
+        "title": "Doremi",
+        "gitLink": "https://github.com/LidesSam/Piano-doremi",
+        "deployLink": "https://lidessam.github.io/Piano-doremi/",
+        "backcolor": "orangered",
+        "descrip": "clasic pong game",
+        "tags": [
+            "javascript",
+            "app"
+        ]
     }
-] 
+]
