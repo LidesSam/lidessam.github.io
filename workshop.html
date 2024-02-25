@@ -9,72 +9,94 @@
     <script type="text/javascript" src="./src/ShowDisplay.js"></script>
 
     <link rel="stylesheet" href="./mainStyle.css">
-
+    <style>
+        .tooltip {
+          position: relative;
+          display: inline-block;
+          border-bottom: 1px dotted black;
+          cursor: help;
+        }
+    
+        .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          background-color: #000;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px;
+          position: absolute;
+          z-index: 1;
+          bottom: 125%;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        
+        .sandbookContainer {
+            max-height: 60vh;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+      
+          .sandbookPage {
+            max-height: 60vh;
+            margin: 10px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+          }
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
+      </style>
 </head>
 
 <body>
 
     <h1> <a href="https://santiagoarrieta.000webhostapp.com/Main.html">Santiago Ariel Arrieta </a></h1>
-    <p>
-        <h2>Work Shop</h2><br/>
-        Worktable used to create the JSON Files<br>
-        <p style="color: red;"> in development/ Current State: ui demo</p>
-    </p>
-    <div class="actionLine">
-        <button> new </button>
-
-    </div>
+    <a href="./home.html" target="blank">Workshop</a>
+    <a href="./workshop.html" target="blank">Workshop</a>
     <!--change and load form json-->
     <div id="divbox" >
 
     </div>
     <br>
 
-    <div id=addpopup class="popup">
-        <!--"type": "showbox", set automatically-->
-   
-        <div class="actionLine">
-            "title:" <input type="text"></input>
-        </div>
-        <div class="actionLine">
-            "gitLink:" <input type="text"></input>
-        </div>
-        <div class="actionLine">
-            "deployLink:" <input type="text"></input>
-        </div>
-        <div class="actionLine">
-            "backcolor:" <input type="text"></input>
-        </div>
-        <div class="actionLine">
-            "Description:" <input type="text"></input>
-        </div>
-        <div class="actionLine">
-            "tag:" <input type="text"></input>
-        </div>
-        <button> close </button>
-    </div>
-    
     <hr>
     <br>
     contacto: lides.sam@gmail.com
 
 
-
 </body>
 <script>
-   function showPopUP(){
-        document.getElementById("addpopup")
-
-   }
    
-   function hidePopUP(){
-       
-   }
-    //var showbox = new ShowcaseDisplay("divbox")
-    //showbox.addFromJsonFile("assets/data/mainList.json")
+    window.addEventListener('DOMContentLoaded', function() {
+        const tooltips = document.querySelectorAll('.tooltip');
+        tooltips.forEach(function(tooltip) {
+          tooltip.addEventListener('mouseenter', function() {
+            const tooltipText = this.getAttribute('title');
+            const tooltipElement = document.createElement('span');
+            tooltipElement.classList.add('tooltiptext');
+            tooltipElement.textContent = tooltipText;
+            this.appendChild(tooltipElement);
+          });
+          tooltip.addEventListener('mouseleave', function() {
+            const tooltipElement = this.querySelector('.tooltiptext');
+            this.removeChild(tooltipElement);
+          });
+        });
+      });
+    var showbox = new ShowcaseDisplay("divbox")
+    showbox.addFromJsonFile("assets/data/mainList.json")
 
    
 
-</script>
+      </script>
 
 </html>

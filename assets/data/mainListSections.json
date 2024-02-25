@@ -50,18 +50,7 @@
     {
         "type": "divider"
     },
-    {
-        "type": "showbox",
-        "title": "ToDoList",
-        "gitLink": "https://github.com/LidesSam/RocketSoda/",
-        "deployLink": "https://lidessam.github.io/RocketSoda/",
-        "backcolor": "darkcyan",
-        "descrip": "Phaser demo",
-        "tags": [
-            "phaser",
-            "game"
-        ]
-    },
+    
     {
         "type": "showbox",
         "title": "stickboard(incomplete/in development)",
@@ -69,18 +58,6 @@
         "deployLink": "https://lidessam.github.io/RocketSoda/",
         "backcolor": "slategrey",
         "descrip": " Proyecto en curso Kaban board echo en react",
-        "tags": [
-            "phaser",
-            "game"
-        ]
-    },
-    {
-        "type": "showbox",
-        "title": "Astro(Gearless v0.1)",
-        "gitLink": "https://github.com/LidesSam/Stick-BoarD",
-        "deployLink": "http://stick-boar-d.herokuapp.com/",
-        "backcolor": "#905599",
-        "descrip": "react demo",
         "tags": [
             "phaser",
             "game"

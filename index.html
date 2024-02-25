@@ -9,12 +9,70 @@
     <script type="text/javascript" src="./src/ShowDisplay.js"></script>
 
     <link rel="stylesheet" href="./mainStyle.css">
+    <style>
+        .tooltip {
+          position: relative;
+          display: inline-block;
+          border-bottom: 1px dotted black;
+          cursor: help;
+        }
+    
+        .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          background-color: #000;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px;
+          position: absolute;
+          z-index: 1;
+          bottom: 125%;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        
+        .sandbookContainer {
+            max-height: 60vh;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+      
+          .sandbookPage {
+            max-height: 60vh;
+            margin: 10px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+          }
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
+      </style>
 </head>
 
 <body>
 
     <h1> <a href="https://santiagoarrieta.000webhostapp.com/Main.html">Santiago Ariel Arrieta </a></h1>
     <a href="./workshop.html" target="blank">Workshop</a>
+    <div style=" width: 100%;
+    background-color: #222255;">
+        <h3>Sandbook</h3>
+        <img class="sandbookPage" src="assets\img\sandbook\CamScanner 18-07-2023 21.32.jpg" usemap="#image-map">
+        <div class="sandbookContainer">
+        <map name="image-map">
+          <area class="tooltip" shape="rect" coords="0,0,100,100" href="#" alt="Tooltip 1" title="Tooltip 1 Text">
+          <area class="tooltip" shape="circle" coords="150,150,50" href="#" alt="Tooltip 2" title="Tooltip 2 Text">
+          <area class="tooltip" shape="poly" coords="300,300,350,350,400,300" href="#" alt="Tooltip 3" title="Tooltip 3 Text">
+        </map>
+        <div>1/1</div>
+    </div>
     <!--change and load form json-->
     <div id="divbox" >
 
@@ -29,11 +87,27 @@
 </body>
 <script>
    
+    window.addEventListener('DOMContentLoaded', function() {
+        const tooltips = document.querySelectorAll('.tooltip');
+        tooltips.forEach(function(tooltip) {
+          tooltip.addEventListener('mouseenter', function() {
+            const tooltipText = this.getAttribute('title');
+            const tooltipElement = document.createElement('span');
+            tooltipElement.classList.add('tooltiptext');
+            tooltipElement.textContent = tooltipText;
+            this.appendChild(tooltipElement);
+          });
+          tooltip.addEventListener('mouseleave', function() {
+            const tooltipElement = this.querySelector('.tooltiptext');
+            this.removeChild(tooltipElement);
+          });
+        });
+      });
     var showbox = new ShowcaseDisplay("divbox")
     showbox.addFromJsonFile("assets/data/mainList.json")
 
    
 
-</script>
+      </script>
 
 </html>
