@@ -1,113 +1,227 @@
-<!Doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>
-        Santiago Ariel Arrieta
-    </title>
-
-    <script type="text/javascript" src="./src/ShowDisplay.js"></script>
-
-    <link rel="stylesheet" href="./mainStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIDES - SAM Showcase</title>
     <style>
-        .tooltip {
-          position: relative;
-          display: inline-block;
-          border-bottom: 1px dotted black;
-          cursor: help;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-    
-        .tooltip .tooltiptext {
-          visibility: hidden;
-          width: 120px;
-          background-color: #000;
-          color: #fff;
-          text-align: center;
-          border-radius: 6px;
-          padding: 5px;
-          position: absolute;
-          z-index: 1;
-          bottom: 125%;
-          left: 50%;
-          transform: translateX(-50%);
-          opacity: 0;
-          transition: opacity 0.3s;
-        }
-        
-        .sandbookContainer {
-            max-height: 60vh;
-            width: 100%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-      
-          .sandbookPage {
-            max-height: 60vh;
-            margin: 10px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-          }
-        .tooltip:hover .tooltiptext {
-          visibility: visible;
-          opacity: 1;
-        }
-      </style>
-</head>
 
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .photo-portrait {
+            margin-bottom: 20px;
+        }
+
+        .photo-portrait img {
+            max-width: 128px;
+            border-radius: 50%;
+        }
+
+        .navbar {
+            margin-top: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            background-color: #ff5500;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #0056b3;
+        }
+
+        .lang-switcher {
+            margin-top: 20px;
+        }
+
+        .lang-switcher button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .lang-switcher button:hover {
+            background-color: #0056b3;
+        }
+
+        .section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-me {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .about-me p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services, .portfolio {
+            background-color: #f9f9f9;
+        }
+
+        .service-item, .portfolio-item {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .service-item h3, .portfolio-item h3 {
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        .service-item p, .portfolio-item p {
+            color: #555;
+        }
+
+        .contact {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .contact p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        function changeLanguage(lang) {
+            var elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(function(element) {
+                element.style.display = 'none';
+            });
+
+            var selectedLangElements = document.querySelectorAll('[data-lang=' + lang + ']');
+            selectedLangElements.forEach(function(element) {
+                element.style.display = 'block';
+            });
+        }
+
+        window.onload = function() {
+            changeLanguage('en'); // Set default language to English
+        };
+    </script>
+</head>
 <body>
 
-    <h1> <a href="https://santiagoarrieta.000webhostapp.com/Main.html">Santiago Ariel Arrieta </a></h1>
-    <a href="./workshop.html" target="blank">Workshop</a>
-    <div style=" width: 100%;
-    background-color: #222255;">
-        <h3>Sandbook</h3>
-        <img class="sandbookPage" src="assets\img\sandbook\CamScanner 18-07-2023 21.32.jpg" usemap="#image-map">
-        <div class="sandbookContainer">
-        <map name="image-map">
-          <area class="tooltip" shape="rect" coords="0,0,100,100" href="#" alt="Tooltip 1" title="Tooltip 1 Text">
-          <area class="tooltip" shape="circle" coords="150,150,50" href="#" alt="Tooltip 2" title="Tooltip 2 Text">
-          <area class="tooltip" shape="poly" coords="300,300,350,350,400,300" href="#" alt="Tooltip 3" title="Tooltip 3 Text">
-        </map>
-        <div>1/1</div>
+    <div class="header">
+        <div class="photo-portrait">
+            <img src="assets/profile/profile1.jpg" alt="Profile Picture of LIDES - SAM">
+        </div>
+        <h1>LIDES - SAM</h1>
+        <div class="lang-switcher">
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('es')">ES</button>
+        </div>
+        <div class="navbar">
+            <a href="#about-me">About Me</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
-    <!--change and load form json-->
-    <div id="divbox" >
 
+    <div id="about-me" class="section about-me">
+        <h2 data-lang="en">About Me</h2>
+        <h2 data-lang="es">Sobre Mí</h2>
+        <p data-lang="en">
+            I'm a fullstack developer with experience in web applications, bot design, creation, and maintenance.
+            Passionate about building efficient and scalable software solutions.
+        </p>
+        <p data-lang="es">
+            Soy un desarrollador fullstack con experiencia en aplicaciones web, diseño de bots, creación y mantenimiento.
+            Apasionado por construir soluciones de software eficientes y escalables.
+        </p>
     </div>
-    <br>
 
-    <hr>
-    <br>
-    contacto: lides.sam@gmail.com
+    <div id="services" class="section services">
+        <h2 data-lang="en">Services</h2>
+        <h2 data-lang="es">Servicios</h2>
+        <div class="service-item">
+            <h3 data-lang="en">Web Development</h3>
+            <h3 data-lang="es">Desarrollo Web</h3>
+            <p data-lang="en">
+                Creating responsive and modern web applications using the latest technologies, including:
+                JavaScript, CSS, Tailwind CSS, Laravel PHP, Livewire, and Jetstream. Experienced in working with databases like PostgreSQL and MySQL, with a focus on multi-tenancy.
+            </p>
+            <p data-lang="es">
+                Creación de aplicaciones web modernas y receptivas utilizando las últimas tecnologías, incluyendo:
+                JavaScript, CSS, Tailwind CSS, Laravel PHP, Livewire y Jetstream. Experiencia en el trabajo con bases de datos como PostgreSQL y MySQL, con un enfoque en la multi-tenencia.
+            </p>
+        </div>
+        <div class="service-item">
+            <h3 data-lang="en">Bot Development</h3>
+            <h3 data-lang="es">Desarrollo de Bots</h3>
+            <p data-lang="en">
+                Designing and maintaining custom bots using technologies such as Selenium (PHP) and Python for various platforms, automating tasks, and improving workflow efficiency.
+            </p>
+            <p data-lang="es">
+                Diseño y mantenimiento de bots personalizados utilizando tecnologías como Selenium (PHP) y Python para diversas plataformas, automatización de tareas y mejora de la eficiencia del flujo de trabajo.
+            </p>
+        </div>
+        <div class="service-item">
+            <h3 data-lang="en">Desktop Applications</h3>
+            <h3 data-lang="es">Aplicaciones de Escritorio</h3>
+            <p data-lang="en">
+                Developing robust desktop applications using C/C++ and C#, tailored to meet client needs and optimize performance across different operating systems.
+            </p>
+            <p data-lang="es">
+                Desarrollo de aplicaciones de escritorio robustas utilizando C/C++ y C#, adaptadas para satisfacer las necesidades del cliente y optimizar el rendimiento en diferentes sistemas operativos.
+            </p>
+        </div>
+        <div class="service-item">
+            <h3 data-lang="en">Freelancing</h3>
+            <h3 data-lang="es">Trabajo Freelance</h3>
+            <p data-lang="en"><a href="https://www.fiverr.com/santiagolds?up_rollout=true">Hire me on Fiverr or see some of my previous work</a></p>
+            <p data-lang="es"><a href="https://www.fiverr.com/santiagolds?up_rollout=true">Contrátame en Fiverr o ve alguno de mis trabajos anteriores</a></p>
+        </div>
+    </div>
 
+    <div id="portfolio" class="section portfolio">
+        <h2 data-lang="en">Portfolio</h2>
+        <h2 data-lang="es">Portafolio</h2>
+        <p data-lang="en"><a href="https://lides.itch.io/">Visit my game projects on itch.io</a></p>
+        <p data-lang="es"><a href="https://lides.itch.io/">Visita mis proyectos de juegos en itch.io</a></p>
+    </div>
+
+    <div id="contact" class="section contact">
+        <h2 data-lang="en">Contact</h2>
+        <h2 data-lang="es">Contacto</h2>
+        <p data-lang="en">Email: lides.sam@gmail.com</p>
+        <p data-lang="es">Correo electrónico: lides.sam@gmail.com</p>
+    </div>
 
 </body>
-<script>
-   
-    window.addEventListener('DOMContentLoaded', function() {
-        const tooltips = document.querySelectorAll('.tooltip');
-        tooltips.forEach(function(tooltip) {
-          tooltip.addEventListener('mouseenter', function() {
-            const tooltipText = this.getAttribute('title');
-            const tooltipElement = document.createElement('span');
-            tooltipElement.classList.add('tooltiptext');
-            tooltipElement.textContent = tooltipText;
-            this.appendChild(tooltipElement);
-          });
-          tooltip.addEventListener('mouseleave', function() {
-            const tooltipElement = this.querySelector('.tooltiptext');
-            this.removeChild(tooltipElement);
-          });
-        });
-      });
-    var showbox = new ShowcaseDisplay("divbox")
-    showbox.addFromJsonFile("assets/data/mainList.json")
-
-   
-
-      </script>
-
 </html>

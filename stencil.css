@@ -1,0 +1,19 @@
+.bg-dark{
+    background-color:#222222;
+    color:white;
+  }
+
+  .btn{
+    box-sizing: border-box;
+    border: #aaa solid 2px;
+    background-color: #bbb;
+    color:#222222;
+  }
+
+  .tab{
+    border: red solid 1px
+  }
+
+  .hide{
+    display:none;
+  }
