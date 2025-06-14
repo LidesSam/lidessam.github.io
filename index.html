@@ -116,6 +116,7 @@
             margin: 0;
         }
     </style>
+
     <script>
         function changeLanguage(lang) {
             var elements = document.querySelectorAll('[data-lang]');
@@ -130,10 +131,22 @@
         }
 
         window.onload = function() {
-            changeLanguage('en'); // Set default language to English
+            const userLanguage = navigator.language || navigator.userLanguage;
+            console.log("User language is: " + userLanguage);
+
+            // Normalize language
+            var langMap = {
+                "es-US": "es", "es-MX": "es", "es-ES": "es", "es": "es",
+                "en-US": "en", "en-GB": "en", "en": "en"
+            };
+
+            var normalizedLang = langMap[userLanguage] || "en";  // default to English
+
+            changeLanguage(normalizedLang);
         };
     </script>
 </head>
+
 <body>
 
     <div class="header">
@@ -148,7 +161,8 @@
         <div class="navbar">
             <a href="#about-me">About Me</a>
             <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#portfolio-games">Game Portfolio</a>
+            <a href="#portfolio-3d">3D Portfolio</a>
             <a href="#contact">Contact</a>
         </div>
     </div>
@@ -169,6 +183,7 @@
     <div id="services" class="section services">
         <h2 data-lang="en">Services</h2>
         <h2 data-lang="es">Servicios</h2>
+
         <div class="service-item">
             <h3 data-lang="en">Web Development</h3>
             <h3 data-lang="es">Desarrollo Web</h3>
@@ -181,6 +196,7 @@
                 JavaScript, CSS, Tailwind CSS, Laravel PHP, Livewire y Jetstream. Experiencia en el trabajo con bases de datos como PostgreSQL y MySQL, con un enfoque en la multi-tenencia.
             </p>
         </div>
+
         <div class="service-item">
             <h3 data-lang="en">Bot Development</h3>
             <h3 data-lang="es">Desarrollo de Bots</h3>
@@ -191,6 +207,7 @@
                 Diseño y mantenimiento de bots personalizados utilizando tecnologías como Selenium (PHP) y Python para diversas plataformas, automatización de tareas y mejora de la eficiencia del flujo de trabajo.
             </p>
         </div>
+
         <div class="service-item">
             <h3 data-lang="en">Desktop Applications</h3>
             <h3 data-lang="es">Aplicaciones de Escritorio</h3>
@@ -201,6 +218,7 @@
                 Desarrollo de aplicaciones de escritorio robustas utilizando C/C++ y C#, adaptadas para satisfacer las necesidades del cliente y optimizar el rendimiento en diferentes sistemas operativos.
             </p>
         </div>
+
         <div class="service-item">
             <h3 data-lang="en">Freelancing</h3>
             <h3 data-lang="es">Trabajo Freelance</h3>
@@ -209,11 +227,18 @@
         </div>
     </div>
 
-    <div id="portfolio" class="section portfolio">
-        <h2 data-lang="en">Portfolio</h2>
-        <h2 data-lang="es">Portafolio</h2>
+    <div id="portfolio-games" class="section portfolio">
+        <h2 data-lang="en">Game Design Portfolio</h2>
+        <h2 data-lang="es">Portafolio de Desarrollo de Juegos</h2>
         <p data-lang="en"><a href="https://lides.itch.io/">Visit my game projects on itch.io</a></p>
         <p data-lang="es"><a href="https://lides.itch.io/">Visita mis proyectos de juegos en itch.io</a></p>
+    </div>
+
+    <div id="portfolio-3d" class="section portfolio">
+        <h2 data-lang="en">3D Print Design Portfolio</h2>
+        <h2 data-lang="es">Portafolio de Diseño 3D</h2>
+        <p data-lang="en"><a href="https://www.crealitycloud.com/user-profile/8042554604/models">Visit my 3D print designs on Creality Cloud</a></p>
+        <p data-lang="es"><a href="https://www.crealitycloud.com/user-profile/8042554604/models">Visita mis diseños 3D en Creality Cloud</a></p>
     </div>
 
     <div id="contact" class="section contact">
