@@ -131,7 +131,18 @@
         }
 
         window.onload = function() {
-            changeLanguage('en');
+            const userLanguage = navigator.language || navigator.userLanguage;
+            console.log("User language is: " + userLanguage);
+
+            // Normalize language
+            var langMap = {
+                "es-US": "es", "es-MX": "es", "es-ES": "es", "es": "es",
+                "en-US": "en", "en-GB": "en", "en": "en"
+            };
+
+            var normalizedLang = langMap[userLanguage] || "en";  // default to English
+
+            changeLanguage(normalizedLang);
         };
     </script>
 </head>
